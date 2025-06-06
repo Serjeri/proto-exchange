@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package exchange;
+
+option go_package = ".";
+
+service ExchangeService {
+
+    rpc GetExchangeRates(Empty) returns (ExchangeRatesResponse);
+
+    rpc PerformExchange(ExchangeRequest) returns (ExchangeResponse);
+}
+
+message ExchangeRatesResponse {
+    map<string, double> rates = 1;
+}
+
+message ExchangeRequest {
+    string from_currency = 1;
+    string to_currency = 2;
+    int64 amount = 3;
+}
+
+message ExchangeResponse {
+    string message = 1;
+    float exchanged_amount = 2;
+    map<string, double> new_balance = 3;
+}
+
+message Empty {}
