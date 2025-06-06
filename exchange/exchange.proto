@@ -23,7 +23,7 @@ message ExchangeRequest {
 
 message ExchangeResponse {
     string message = 1;
-    float exchanged_amount = 2;
+    double exchanged_amount = 2;
     map<string, double> new_balance = 3;
 }
 

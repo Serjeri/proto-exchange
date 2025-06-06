@@ -128,7 +128,7 @@ func (x *ExchangeRequest) GetAmount() int64 {
 type ExchangeResponse struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Message         string                 `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
-	ExchangedAmount float32                `protobuf:"fixed32,2,opt,name=exchanged_amount,json=exchangedAmount,proto3" json:"exchanged_amount,omitempty"`
+	ExchangedAmount float64                `protobuf:"fixed64,2,opt,name=exchanged_amount,json=exchangedAmount,proto3" json:"exchanged_amount,omitempty"`
 	NewBalance      map[string]float64     `protobuf:"bytes,3,rep,name=new_balance,json=newBalance,proto3" json:"new_balance,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
@@ -171,7 +171,7 @@ func (x *ExchangeResponse) GetMessage() string {
 	return ""
 }
 
-func (x *ExchangeResponse) GetExchangedAmount() float32 {
+func (x *ExchangeResponse) GetExchangedAmount() float64 {
 	if x != nil {
 		return x.ExchangedAmount
 	}
@@ -239,7 +239,7 @@ const file_exchange_proto_rawDesc = "" +
 	"\x06amount\x18\x03 \x01(\x03R\x06amount\"\xe3\x01\n" +
 	"\x10ExchangeResponse\x12\x18\n" +
 	"\amessage\x18\x01 \x01(\tR\amessage\x12)\n" +
-	"\x10exchanged_amount\x18\x02 \x01(\x02R\x0fexchangedAmount\x12K\n" +
+	"\x10exchanged_amount\x18\x02 \x01(\x01R\x0fexchangedAmount\x12K\n" +
 	"\vnew_balance\x18\x03 \x03(\v2*.exchange.ExchangeResponse.NewBalanceEntryR\n" +
 	"newBalance\x1a=\n" +
 	"\x0fNewBalanceEntry\x12\x10\n" +
